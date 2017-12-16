@@ -13,7 +13,7 @@ client.on('ready', () => {
 });
 
 client.on('guildMemberAdd', member => {
-       member.guild.defaultChannel.send(`Welcome to the server, ${member}! You are the ${client.users.size}st on the Server!`);
+       member.guild.defaultChannel.sendMessage(`Welcome to the server, ${member}! You are the ${client.users.size}st on the Server!`);
        console.log(`${member.user.username} has joined the Server! He/She is the ${client.users.size}st on the server!`);
 });
 
