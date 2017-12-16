@@ -15,7 +15,7 @@ client.on('ready', () => {
 client.on('message', message => {
 	db.updateValue(message.author.id + message.guild.id, 1).then(i => {
 
-		let messages
+		let messages;
 		if (i.value == 25) messages = 25; // Level 1
 		if (i.value == 50) messages = 50; // Level 2
 		if (i.value == 75) messages = 75; // Level 3
@@ -31,7 +31,10 @@ client.on('message', message => {
 			db.updateValue(`userLevel_${message.author + message.guild.id}`, 1).then(o => {
 				message.channel.send(`You Leveled Up!, You are now Level ${o.value}`)
 			})
+
 		}
+
+	})
 
 client.on('guildMemberAdd', member => {
    member.send("Welcome to our Server! I hope you Have FUN Getting Alts!\n|\nV\nV\nCommands:\n|\nV\n``!getMinecraft``\n``!getNetflix``\n``!getSpotify``");
