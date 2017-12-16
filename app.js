@@ -14,13 +14,7 @@ client.on('ready', () => {
 
 bot.on('message', message => {
 
-    // Variables - Variables make it easy to call things, since it requires less typing.
-    let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
-    let sender = message.author; // This variable takes the message, and finds who the author is.
-    let args = message.content.slice(prefix.length).trim().split(" "); // This variable slices off the prefix, then puts the rest in an array based off the spaces
-    let cmd = args.shift().toLowerCase(); // This takes away the first object in the cont array, then puts it in this.
-
-    // Message Leveling System - Make sure you require quick.db
+	// Message Leveling System - Make sure you require quick.db
     db.updateValue(message.author.id + message.guild.id, 1).then(i => { // You pass it the key, which is authorID + guildID, then pass it an increase which is 1 in this instance.
         // It also returns the new updated object, which is what we will use.
 
@@ -36,20 +30,6 @@ bot.on('message', message => {
         }
 
     })
-
-    // We also need to make sure it doesn't respond to bots
-    if (sender.bot) return;
-    if (!message.content.startsWith(prefix)) return; // We also want to make it so that if the message does not start with the prefix, return.
-
-    // Command Handler - .trim() removes the blank spaces on both sides of the string
-    try {
-        let commandFile = require(`./commands/${cmd}.js`); // This will assign that filename to commandFile
-        commandFile.run(bot, message, args, func); // This will add the functions, from the functions.js file into each commandFile.
-    } catch (e) { // If an error occurs, this will run.
-        console.log(e.message); // This logs the error message
-    } finally { // This will run after the first two clear up
-        console.log(`${message.author.username} ran the command: ${cmd}`);
-    }
 
 });
 
