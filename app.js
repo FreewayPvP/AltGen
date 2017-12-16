@@ -1,4 +1,5 @@
 const Commando = require('discord.js-commando');
+const db = require("quick.db");
 
 const client = new Commando.Client({
 	owner: '367910644181368833'
