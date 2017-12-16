@@ -12,24 +12,27 @@ client.on('ready', () => {
 	client.user.setStatus('idle');
 });
 
-bot.on('message', message => {
+client.on('message', message => {
+	db.updateValue(message.author.id + message.guild.id, 1).then(i => {
 
-	// Message Leveling System - Make sure you require quick.db
-    db.updateValue(message.author.id + message.guild.id, 1).then(i => { // You pass it the key, which is authorID + guildID, then pass it an increase which is 1 in this instance.
-        // It also returns the new updated object, which is what we will use.
+		let messages
+		if (i.value == 25) messages = 25; // Level 1
+		else if (i.value == 50) messages = 50; // Level 2
+		else if (i.value == 75) messages = 75; // Level 3
+		else if (i.value == 100) messages = 100; // Level 4
+		else if (i.value == 125) messages = 125; // Level 5
+		else if (i.value == 150) messages = 150; // Level 6
+		else if (i.value == 175) messages = 175; // Level 7
+		else if (i.value == 200) messages = 200; // Level 8
+		else if (i.value == 225) messages = 225; // Level 9
+		else if (i.value == 250) messages = 250; // Level 10
 
-        let messages; // Create an empty variable - These IF statements will run if the new amount of messages sent is the same as the number.
-        if (i.value == 25) messages = 25; // Level 1
-        else if (i.value == 50) messages = 50; // Level 2
-        else if (i.value == 100) messages = 100; // Level 3 - You can set these to any number, and any amount of them.
+		if (!isNaN(messages)) {
+			db.updateValue(`userLevel_${message.author + message.guild.id}`, 1).then(o => {
+				message.channel.send(`You Leveled Up!, You are now Level ${o.value}`)
+			})
+		}
 
-        if (!isNaN(messages)) { // If messages IS STILL empty, run this.
-            db.updateValue(`userLevel_${message.author.id + message.guild.id}`, 1).then(o => { // This returns the updated object of userLevel_ID. 
-                message.channel.send(`You sent ${messages} messages, so you leveled up! You are now level ${o.value}`) // Send their updated level to the channel.
-            })
-        }
-
-    })
 
 });
 
