@@ -7,7 +7,9 @@ const client = new Commando.Client({
 const config = require("./config.json");
 
 client.on('ready', () => {
-  console.log(`Hey, I Just Finished Starting up! You can now use me in Discord!`);
+	console.log(`Hey, I Just Finished Starting up! You can now use me in Discord!`)
+	
+	bot.user.setStatus('idle');
 });
 
 client.on("ready", () => {
