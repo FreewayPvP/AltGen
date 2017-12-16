@@ -29,4 +29,4 @@ client.registry
 	.registerDefaults()
 	.registerCommandsIn(path.join(__dirname, 'commands'));
 
-client.login('MzkxMzM5Mzg1MTA4NTYxOTIw.DRXOtw.Sqzl1NjIOLUqL9tRE1_oW-iwCJI');
+client.login('MzkxNjQ3OTk2NzY2NTg0ODMy.DRbuKQ.DlcvmEyEeaY6duKcToFxl_tDS0I');
