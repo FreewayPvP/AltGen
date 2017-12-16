@@ -16,7 +16,6 @@ client.on('guildMemberAdd', member => {
        message.member.guild.defaultChannel.sendMessage(`Welcome to the server, ${member}! You are the ${client.users.size}st on the Server!`);
        console.log(`${member.user.username} has joined the Server! He/She is the ${client.users.size}st on the server!`);
 });
-message.channel.sendMessage
 
 client.on("ready", () => {
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
