@@ -13,7 +13,7 @@ client.on('ready', () => {
 });
 
 client.on('guildMemberAdd', member => {
-   member.send("Welcome to our Server! I hope you Have FUN Getting Alts!\n|\nV\nV\nCommands:\n|\nV\v``!getMinecraft``\n``!getNetflix``\n``!getSpotify``");
+   member.send("Welcome to our Server! I hope you Have FUN Getting Alts!\n|\nV\nV\nCommands:\n|\nV\n``!getMinecraft``\n``!getNetflix``\n``!getSpotify``");
 });
 
 client.on("ready", () => {
