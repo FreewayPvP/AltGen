@@ -1,11 +1,10 @@
 const Commando = require('discord.js-commando');
 const db = require('quick.db');
+const prefix = ('!')
 
 const client = new Commando.Client({
 	owner: '367910644181368833'
 });
-
-const config = require("./config.json");
 
 client.on('ready', () => {
 	console.log(`Hey, I Just Finished Starting up! You can now use me in Discord!`)
