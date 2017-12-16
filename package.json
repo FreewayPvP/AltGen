@@ -1,4 +1,9 @@
 {
   "name": "",
-  "version": ""
+  "version": "",
+  "description": "This bot Belongs Officialy to FreewayPvP#6468\r Do not try to steal this BOT please.\r Do not claim this as you're BOT",
+  "dependencies": {
+    "discord.js": "^11.2.1",
+    "discord.js-commando": "^0.9.0"
+  }
 }
