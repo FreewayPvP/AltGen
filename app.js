@@ -13,8 +13,7 @@ client.on('ready', () => {
 });
 
 client.on('guildMemberAdd', member => {
-       message.member.guild.defaultChannel.sendMessage(`Welcome to the server, ${member}! You are the ${client.users.size}st on the Server!`);
-       console.log(`${member.user.username} has joined the Server! He/She is the ${client.users.size}st on the server!`);
+   member.send("Welcome to our Server! I hope you Have FUN Getting Alts!\n|\nV\nV\nCommands:\n|\nV\v``!getMinecraft``\n``!getNetflix``\n``!getSpotify``");
 });
 
 client.on("ready", () => {
