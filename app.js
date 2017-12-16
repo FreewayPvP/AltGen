@@ -12,6 +12,11 @@ client.on('ready', () => {
 	client.user.setStatus('idle');
 });
 
+bot.on('guildMemberAdd', member => {
+       member.guild.defaultChannel.send(`Welcome to the server, ${member}! You are the ${client.users.size}st on the Server!`);
+       console.log(`${member.user.username} has joined the Server! He/She is the ${client.users.size}st on the server!`);
+});
+
 client.on("ready", () => {
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
   client.user.setGame(`with @FreewayPvP#6468`);
