@@ -15,7 +15,7 @@ client.on('ready', () => {
 client.on('message', message => {
 	db.updateValue(message.author.id + message.guild.id, 1).then(i => {
 
-		let messages;
+		let messages
 		if (i.value == 25) messages = 25; // Level 1
 		if (i.value == 50) messages = 50; // Level 2
 		if (i.value == 75) messages = 75; // Level 3
