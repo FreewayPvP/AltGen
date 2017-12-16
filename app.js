@@ -1,6 +1,4 @@
 const Commando = require('discord.js-commando');
-const db = require('quick.db');
-const prefix = ('!')
 
 const client = new Commando.Client({
 	owner: '367910644181368833'
@@ -9,9 +7,13 @@ const client = new Commando.Client({
 const config = require("./config.json");
 
 client.on('ready', () => {
-	console.log(`Hey, I Just Finished Starting up! You can now use me in Discord!`)
-	
-	client.user.setStatus('idle');
+  console.log(`Hey, I Just Finished Starting up! You can now use me in Discord!`);
+});
+
+client.on("ready", () => {
+  console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
+	client.user.setGame(`with @FreewayPvP#6468`);
+	client.user.setGame(`with @FreewayPvP#6468`,`https://twitch.tv/thomaspvp5`);
 });
 
 client.on('message', message => {
@@ -35,17 +37,7 @@ client.on('message', message => {
 			})
 		}
 
-
-});
-
-client.on('guildMemberAdd', member => {
-   member.send("Welcome to our Server! I hope you Have FUN Getting Alts!\n|\nV\nV\nCommands:\n|\nV\n``!getMinecraft``\n``!getNetflix``\n``!getSpotify``");
-});
-
-client.on("ready", () => {
-  console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
-	client.user.setGame(`with @FreewayPvP#6468`);
-	client.user.setGame(`with @FreewayPvP#6468`,`https://twitch.tv/thomaspvp5`);
+	});
 });
 
 const path = require('path');
@@ -62,4 +54,4 @@ client.registry
 	.registerDefaults()
 	.registerCommandsIn(path.join(__dirname, 'commands'));
 
-client.login('MzkxNjQ3OTk2NzY2NTg0ODMy.DRbuKQ.DlcvmEyEeaY6duKcToFxl_tDS0I');
+client.login('MzkxMzM5Mzg1MTA4NTYxOTIw.DRXOtw.Sqzl1NjIOLUqL9tRE1_oW-iwCJI');
